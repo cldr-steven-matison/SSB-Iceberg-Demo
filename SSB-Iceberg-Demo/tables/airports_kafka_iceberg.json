@@ -1,0 +1,33 @@
+{
+  "metadata" : {
+    "schema.7.data-type" : "ROW<`lat` DOUBLE, `lon` DOUBLE>",
+    "schema.0.data-type" : "ROW<`en` VARCHAR(2147483647)>",
+    "schema.9.name" : "eventTimestamp",
+    "schema.1.name" : "city_code",
+    "schema.4.name" : "code",
+    "engine.hive.enabled" : "true",
+    "schema.3.data-type" : "VARCHAR(2147483647)",
+    "schema.3.name" : "time_zone",
+    "schema.7.name" : "coordinates",
+    "schema.6.name" : "name",
+    "schema.5.data-type" : "VARCHAR(2147483647)",
+    "schema.0.name" : "name_translations",
+    "schema.5.name" : "iata_type",
+    "catalog-database" : "${ssb.env.userid}",
+    "schema.8.data-type" : "BOOLEAN",
+    "schema.2.name" : "country_code",
+    "schema.6.data-type" : "VARCHAR(2147483647)",
+    "catalog-name" : "Hive",
+    "schema.1.data-type" : "VARCHAR(2147483647)",
+    "connector" : "iceberg",
+    "schema.2.data-type" : "VARCHAR(2147483647)",
+    "catalog-table" : "airports_kafka_iceberg",
+    "catalog-type" : "hive",
+    "schema.9.data-type" : "TIMESTAMP(3)",
+    "schema.4.data-type" : "VARCHAR(2147483647)",
+    "schema.8.name" : "flightable"
+  },
+  "type" : "ssb",
+  "table_name" : "airports_kafka_iceberg",
+  "transform_code_b64_encoded" : false
+}

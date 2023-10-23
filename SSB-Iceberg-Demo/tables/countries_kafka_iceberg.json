@@ -1,0 +1,25 @@
+{
+  "metadata" : {
+    "schema.5.name" : "eventTimestamp",
+    "schema.0.data-type" : "ROW<`en` VARCHAR(2147483647)>",
+    "catalog-database" : "${ssb.env.userid}",
+    "schema.2.name" : "code",
+    "schema.1.name" : "cases",
+    "catalog-name" : "Hive",
+    "schema.4.name" : "currency",
+    "schema.1.data-type" : "ROW<`su` VARCHAR(2147483647)>",
+    "engine.hive.enabled" : "true",
+    "schema.3.data-type" : "VARCHAR(2147483647)",
+    "connector" : "iceberg",
+    "schema.2.data-type" : "VARCHAR(2147483647)",
+    "schema.3.name" : "name",
+    "catalog-table" : "countries_kafka_iceberg",
+    "catalog-type" : "hive",
+    "schema.5.data-type" : "TIMESTAMP(3)",
+    "schema.4.data-type" : "VARCHAR(2147483647)",
+    "schema.0.name" : "name_translations"
+  },
+  "type" : "ssb",
+  "table_name" : "countries_kafka_iceberg",
+  "transform_code_b64_encoded" : false
+}
