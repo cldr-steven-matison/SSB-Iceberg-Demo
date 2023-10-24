@@ -61,18 +61,20 @@ CREATE TABLE ${user_id}_airlines.`countries_nifi_iceberg` (
 4. Check out Source Control.  If you created vs import on first screen you may have to press import here still.  You can setup Authentication here.
 5. Create and activate an Environment with a key value pair for your userid -> username
 6. Inspect/Add Data Sources
-7. Inspect/Add Virtual Kafka Tables
+7. Inspect/Add Virtual Kafka Tables.  You can edit the existing tables against your kafka data source and correct topics.  Just be sure to choose right topics and detect schema before save.
 
 ***
 
 ## Modifications to Jobs
 
+Note:  current repo should not require any job modifications.
+
 1. CSA_1_11_Iceberg_Sample - Example in CSA 1.11 docs
 	* No modifications should be required to this job
 2. Countries_Kafka - Select from Kafka Countries, Create IceBerg Table, Insert Results
-	* Confirm Kafka topic, ssb_default table names, and namespaces
+	* Confirm Kafka topic
 3. Routes_Kafka - Select from Kafka Routes, Create IceBerg Table, Insert Results
-	* Confirm Kafka topic, ssb_default table names, and namespaces
+	* Confirm Kafka topic
 4. Test_Hue_Tables
 	* Confirm source iceberg table exists, check table names, and namespaces.
 
