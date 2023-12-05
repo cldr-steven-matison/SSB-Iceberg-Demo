@@ -77,6 +77,8 @@ Note:  current repo should not require any job modifications.
 	* Confirm Kafka topic
 4. Test_Hue_Tables
 	* Confirm source iceberg table exists, check table names, and namespaces.
+5. Time_Travel
+  * Execute required DESCRIBE in Hue, use SnapShot Ids
 
 ## Top Tips
 
@@ -110,4 +112,43 @@ SELECT * FROM ${user_id}_airlines.`airports_kafka_iceberg`;
 SELECT * FROM ${user_id}_airlines.`countries_kafka_iceberg`;
 SELECT * FROM ${user_id}_airlines.`routes_kafka_iceberg`;
 
+SELECT count(*) FROM ${user_id}_airlines.`airports_nifi_iceberg`;
+SELECT count(*) FROM ${user_id}_airlines.`countries_nifi_iceberg`;
+SELECT count(*) FROM ${user_id}_airlines.`routes_nifi_iceberg`;
+
+SELECT count(*) FROM ${user_id}_airlines.`airports_kafka_iceberg`;
+SELECT count(*) FROM ${user_id}_airlines.`countries_kafka_iceberg`;
+SELECT count(*) FROM ${user_id}_airlines.`routes_kafka_iceberg`;
+
+```
+
+## Time Travel With Iceberg
+
+```javascript
+
+DESCRIBE HISTORY ${user_id}_airlines.`airports_nifi_iceberg`;
+DESCRIBE HISTORY ${user_id}_airlines.`countries_nifi_iceberg`;
+DESCRIBE HISTORY ${user_id}_airlines.`routes_nifi_iceberg`;
+
+DESCRIBE HISTORY ${user_id}_airlines.`airports_kafka_iceberg`;
+DESCRIBE HISTORY ${user_id}_airlines.`countries_kafka_iceberg`;
+DESCRIBE HISTORY ${user_id}_airlines.`routes_kafka_iceberg`;
+
+
+DESCRIBE HISTORY ${user_id}_airlines.`routes_kafka_iceberg`;
+-- Take one old and one newer snapshot id
+
+-- Get Count as of SnapShot 1
+select count(*) from ${user_id}_airlines.`routes_kafka_iceberg` FOR SYSTEM_VERSION AS OF 2508721398088670959
+-- 64964
+
+-- Get Count as of SnapShot 2  
+select count(*) from ${user_id}_airlines.`routes_kafka_iceberg` FOR SYSTEM_VERSION AS OF 1360529202097334446
+-- 129928
+
+-- Roll back to Snapshot 1
+ALTER TABLE ${user_id}_airlines.`routes_kafka_iceberg`  EXECUTE ROLLBACK(2508721398088670959);
+
+-- Show Count is from Snapshot 1
+select count(*) from ${user_id}_airlines.`routes_kafka_iceberg` 
 ```
