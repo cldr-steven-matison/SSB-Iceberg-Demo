@@ -152,4 +152,5 @@ ALTER TABLE ${user_id}_airlines.`routes_kafka_iceberg`  EXECUTE ROLLBACK(2508721
 
 -- Show Count is from Snapshot 1
 select count(*) from ${user_id}_airlines.`routes_kafka_iceberg` 
+-- 64964
 ```
