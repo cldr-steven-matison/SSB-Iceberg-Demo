@@ -80,6 +80,7 @@ Note:  current repo should not require any job modifications.
 5. Time_Travel
   * Execute required DESCRIBE in Hue, use SnapShot Ids
 
+
 ## Top Tips
 
 1. If you are using different topics w/ different schema, use SSB to get the DDL for topic.  Copy paste into the ssb job's create statement and begin modifying to acceptance.  Just be careful with complicated schema such as array, struct, etc.  
