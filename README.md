@@ -78,7 +78,7 @@ Note:  current repo should not require any job modifications.
 4. Test_Hue_Tables
 	* Confirm source iceberg table exists, check table names, and namespaces.
 5. Time_Travel
-  * Execute required DESCRIBE in Hue, use SnapShot Ids
+ * Execute required DESCRIBE in Hue, use SnapShot Ids
 
 ***
 
