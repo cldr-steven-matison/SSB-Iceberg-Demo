@@ -80,6 +80,7 @@ Note:  current repo should not require any job modifications.
 5. Time_Travel
   * Execute required DESCRIBE in Hue, use SnapShot Ids
 
+***
 
 ## Top Tips
 
